@@ -6,14 +6,14 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/employeeAll.css">
+        <link rel="stylesheet" href="../css/selectAll.css">
     </head>
 
     <body>
 
-    <h2>Employee table</h2>
+    <h2>Employee Table</h2>
 
-    <a href="selectAllclients.php">></a>
+    <a href="selectAllclients.php">Clients Table></a>
 
     <?php
 

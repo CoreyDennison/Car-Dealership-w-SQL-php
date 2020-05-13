@@ -11,10 +11,9 @@
 
     <body>
 
-    <h2>Clients Table</h2>
+    <h2>Sales Table</h2>
 
-    <a href="selectAllemployee.php">< Employee Table</a>
-    <a href="selectAllinventory.php">Inventory Table ></a>
+    <a href="selectAllinventory.php">< Inventory Table</a>
 
     <?php
 
@@ -24,16 +23,16 @@
 
         $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-        $sql = "SELECT * FROM clients";
+        $sql = "SELECT * FROM sales";
 
         $result = mysqli_query($db, $sql) or die("Unable to gather info.");
 
         echo "<table>";
-        echo "<tr><th>client_id</th><th>fname</th><th>lname</th><th>phone</th><th>address</th></tr>";
+        echo "<tr><th>sale_id</th><th>emp_id</th><th>client_id</th><th>trans_type</th><th>reg</th><th>time_of_sale</th><th>price</th></tr>";
         while($row = mysqli_fetch_assoc($result)){
-            echo "<tr><td>{$row['client_id']}</td><td>{$row['fname']}</td><td>{$row['lname']}</td><td>{$row['phone']}</td><td>{$row['address']}</td></tr>";
+            echo "<tr><td>{$row['sale_id']}</td><td>{$row['emp_id']}</td><td>{$row['client_id']}</td><td>{$row['trans_type']}</td><td>{$row['reg']}</td><td>{$row['time_of_sale']}</td><td>{$row['price']}</td></tr>";
         }
-        echo "</table>"
+        echo "</table>";
     ?>
     
     <!-- SELECT ALL: https://www.youtube.com/watch?v=pc0otVM80Sk -->
