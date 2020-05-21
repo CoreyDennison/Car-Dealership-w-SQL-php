@@ -10,6 +10,21 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
 
     <script src="https://kit.fontawesome.com/f2aee70c50.js" crossorigin="anonymous"></script>
+
+    <script>
+        function hamburger_menu(){
+            document.getElementById("hamburger_icon").style.display="none";
+            document.getElementById("hamburger_icon2").style.display="block";
+            document.getElementById("hamburger_menu").style.display="block";
+        }
+
+        function hamburger_menu2(){
+            document.getElementById("hamburger_icon").style.display="block";
+            document.getElementById("hamburger_icon2").style.display="none";
+            document.getElementById("hamburger_menu").style.display="none";
+        }
+    </script>
+
 </head>
 
     <body>
@@ -52,9 +67,50 @@
                     </li>
                 </ul>
             </nav>
+
+            <div id="hamburger_icon" onclick="hamburger_menu()">
+                <img src="../images/ham_bars.jpg" width="50px" height="40px">
+            </div>
+
+            <div id="hamburger_icon2" onclick="hamburger_menu2()">
+                <img src="../images/ham_bars2.jpg" width="50px" height="40px">
+            </div>
+
         </div>
 
-        <div id="image_slider"></div>
+        <div id="hamburger_menu">
+            <h2>Employees</h2>
+            <ul>
+                <li><a href="../php/selectAllemployee.php">View all employees</a></li>
+                <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
+                <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+            </ul>
+
+            <h2>Clients</h2>
+            <ul>
+                <li><a href="../php/selectAllclients.php">View all clients</a></li>
+                <li><a href="../php/insertIntoclients.php">Add client</a></li>
+                <li><a href="../php/deletefromclients.php">Remove client</a></li>
+            </ul>
+
+            <h2>Inventory</h2>
+            <ul>
+                <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
+                <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
+                <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+            </ul>
+
+            <h2>Sales</h2>
+            <ul>
+                <li><a href="../php/selectAllsales.php">View all sales</a></li>
+                <li><a href="../php/insertIntosales.php">Add sale</a></li>
+                <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+            </ul>
+        </div>
+
+        <!-- ****************** Image Slider ****************** -->
+        <div id="image_slider">    
+        </div>
 
     </body>
 </html>

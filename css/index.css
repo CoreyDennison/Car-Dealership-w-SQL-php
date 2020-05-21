@@ -68,4 +68,153 @@
 #header nav ul li ul li a:hover {
     text-decoration: underline;
 }
+
+/*Image slider*/
+#image_slider {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    animation: slide 30s infinite;
+}
+
+@keyframes slide {
+    0% {
+        background-image: url(../images/pic1.jpg);
+    }
     
+    20% {
+        background-image: url(../images/pic2.jpg);
+    }
+
+    40% {
+        background-image: url(../images/pic3.jpg);
+    }
+
+    60% {
+        background-image: url(../images/pic4.jpg);
+    }
+
+    80% {
+        background-image: url(../images/pic5.jpg);
+    }
+
+    100% {
+        background-image: url(../images/pic6.jpg);
+    }
+}
+
+#hamburger_icon  {
+    display: none;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    float: right;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#hamburger_icon img { 
+    position: relative;
+    right: 10px;
+    bottom: 0px;
+}
+
+#hamburger_icon2  {
+    display: none;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    float: right;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#hamburger_icon2 img { 
+    position: relative;
+    right: 10px;
+    bottom: 0px;
+}
+
+#hamburger_menu {
+    display: none;
+    background-color: black;
+    width: 250px;
+    float: right;
+    padding: 20px 10px 20px 20px;
+}
+
+#hamburger_menu h2 {
+    color: red;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 30px; 
+}
+
+#hamburger_menu ul {
+    margin-left: 20px;
+    line-height: 30px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#hamburger_menu ul li a {
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+
+/*******************Nav bar resposiveness ***********************/
+
+@media only screen and (max-width: 1260px) {
+    #header nav ul {
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    #header nav ul {
+        margin-right: -20px;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    #header img {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    #header nav ul li {
+        width: 160px;
+    }
+
+    #header nav ul {
+        margin-right: -2px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    #header nav ul {
+        margin-right: -10px;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    /*------Make Hamburger Menu-------*/
+    #header nav {
+        display: none;
+    }
+
+    #hamburger_icon {
+        display: block;
+    }
+
+    #hamburger_icon:hover {
+        cursor: pointer;
+    }
+
+}
