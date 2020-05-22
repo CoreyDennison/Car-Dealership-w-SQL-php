@@ -9,8 +9,26 @@
     <link rel="stylesheet" type="text/css" href="../css/box.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
 
-    <script src="https://kit.fontawesome.com/f2aee70c50.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- ************ JQuery ************ -->
+    <script>
+        $(window).resize(function() {
+            if ($(window).width() > 810) {
+                $("#hamburger_icon").css("display", "none");
+                $("#hamburger_icon2").css("display", "none");
+                $("#hamburger_menu").css("display", "none");
+            }
+
+            else if ($(window).width() < 835) {
+                $("#hamburger_icon").css("display", "block");
+                $("#hamburger_icon2").css("display", "none");
+                $("#hamburger_menu").css("display", "none");
+            }
+        });
+    </script>
+
+    <!-- *********** JavaScript *********** -->
     <script>
         function hamburger_menu(){
             document.getElementById("hamburger_icon").style.display="none";
