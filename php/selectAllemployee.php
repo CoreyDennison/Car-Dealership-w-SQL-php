@@ -126,6 +126,9 @@
             </ul>
         </div>
 
+        <h3>Employees</h3>
+        <p><a href="selectAllclients.php">View all clients ----></a></p>
+
         <?php
 
             $user = 'root';

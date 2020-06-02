@@ -144,10 +144,20 @@ h3 {
     margin-left: 50px !important;
 }
 
-p a {
+.left a {
+    color: black !important;
+    float: left !important;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px !important;
+    margin-left: 50px !important;
+    text-decoration: none !important;
+}
+
+.right a {
     color: black !important;
     float: right !important;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px !important;
     margin-right: 50px !important;
     text-decoration: none !important;
 }
@@ -159,7 +169,7 @@ p a:hover {
 /* *************** Table Styling **************** */
 
 table {
-    margin-top: 50px !important;
+    margin-top: 70px !important;
     margin-left: 100px !important;
     width: 80%;
 }
@@ -257,6 +267,14 @@ th {
 }
 
 @media only screen and (max-width: 785px) {
+    .left a {
+        margin-left: 20px !important;
+    }
+
+    h3 {
+        margin-left: 20px !important;
+    }
+    
     td {
         font-size: 18px !important;
         padding: 10px !important;
@@ -269,7 +287,7 @@ th {
     
     table { 
         position: absolute;
-        top: 130px;
+        top: 150px;
         left: 0px;
         z-index: -1;
     }
@@ -287,8 +305,12 @@ th {
     h3 {
         margin-left: 20px !important;
     }
-   
-    p a {
+
+    .left a {
+        margin-left: 10px !important;
+    }
+
+    .right a {
         margin-right: -100px !important;
     }
 
