@@ -1,0 +1,435 @@
+#header {
+    background-color: black;
+    width: 100%;
+    height: 90px;
+}
+
+#header a img {
+    margin-top: 15px;
+    margin-left: 100px;
+}
+
+#header a img:hover {
+    cursor: pointer;
+}
+
+#header nav {
+    margin-top: -60px;
+    z-index: 2;
+}
+
+#header nav ul {
+    font-family: Arial, Helvetica, sans-serif;  
+    color: white;
+    font-size: 24px;
+    float: right;
+    margin-right: 20px;
+    z-index: 2;
+}
+
+#header nav ul:hover {
+    cursor: pointer;
+}
+
+#header nav ul li {
+    float: left;
+    position: relative;
+}
+
+#header nav ul li {
+    width: 200px;
+    z-index: 2;
+}
+
+#header nav ul li a {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    padding-top: 22px;
+    padding-right: 20px;
+}
+
+#header nav ul li ul {
+    display: none;
+    position: absolute;
+    top: 0px;
+    width: 190px;
+    padding-top: 100px;
+    background-color: black;
+    z-index: -1;
+}
+
+#header ul li:hover ul {
+    display: block;
+}
+
+#header nav ul li ul li a{
+    padding: 12px 14px;
+    color: red;
+}
+
+#header nav ul li ul li a:hover {
+    text-decoration: underline;
+}
+
+#hamburger_icon  {
+    display: none;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    float: right;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#hamburger_icon img { 
+    position: relative;
+    left: 10px;
+    top: 15px;
+}
+
+#hamburger_icon2  {
+    display: none;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    float: right;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#hamburger_icon2 img { 
+    position: relative;
+    left: 10px;
+    top: 15px;
+}
+
+#hamburger_menu {
+    display: none;
+    background-color: black;
+    width: 250px;
+    float: right;
+    padding: 20px 10px 20px 20px;
+}
+
+#hamburger_menu h2 {
+    color: red;
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-top: 30px; 
+}
+
+#hamburger_menu ul {
+    margin-left: 20px;
+    line-height: 30px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+#hamburger_menu ul li a {
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+h3 {
+    color: red;
+    font-size: 25px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: 600 !important;
+    margin-top: 20px !important;
+    margin-left: 30px !important;
+}
+
+p a {
+    color: black !important;
+    float: left !important;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 55% !important;
+    text-decoration: none !important;
+}
+
+p a:hover {
+    text-decoration: underline !important;
+}
+
+/* *************** Table Styling **************** */
+
+table {
+    margin-top: 30px !important;
+    margin-left: 30px !important;
+    width: 60%;
+}
+
+table, th, td {
+    border: 2px solid black !important;
+}
+
+td {
+    color: rgb(71, 70, 70) ;
+    font-size: 20px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    padding: 20px !important;
+    text-align: center;
+    
+}
+
+th {
+    padding: 10px !important;
+}
+
+th {
+    font-size: 25px !important;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/*******************Nav bar resposiveness ***********************/
+
+@media only screen and (max-width: 1260px) {
+    #header nav ul {
+        margin-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 1120px) {
+    #header nav ul {
+        margin-right: -20px;
+    }
+}
+
+@media only screen and (max-width: 1030px) {
+    #header a img {
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    #header nav ul li {
+        width: 160px;
+    }
+
+    #header nav ul {
+        margin-right: -2px;
+    }
+}
+
+@media only screen and (max-width: 810px) {
+    #header nav {
+        display: none;
+    }
+
+    #hamburger_icon {
+        display: block;
+    }
+
+    #hamburger_icon:hover {
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #hamburger_icon {
+        position: relative;
+        right: 20px;
+    }
+
+    #hamburger_icon2 {
+        position: relative;
+        right: 20px;
+    }
+}
+
+/* Table Responsiveness */
+@media only screen and (max-width: 960px) {
+    #header nav ul {
+        margin-right: -10px;
+    }
+
+    table {
+        margin-top: 50px !important;
+        margin-left: 20px !important;
+        width: 90%;
+    }
+
+    p a {
+        margin-left: 80% !important;
+        z-index: -1;
+    }
+}
+
+@media only screen and (max-width: 785px) {
+    td {
+        font-size: 18px !important;
+        padding: 10px !important;
+    }
+
+    th {
+        font-size: 20px !important;
+        padding: 10px !important;
+    }
+    
+    table { 
+        position: absolute;
+        top: 130px;
+        left: 0px;
+        z-index: -1;
+    }
+
+    #hamburger_icon {
+        margin-right: 80px;
+    }
+
+    #hamburger_icon2 {
+        margin-right: 80px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    h3 {
+        margin-left: 20px !important;
+    }
+
+    p a {
+        margin-right: -100px !important;
+    }
+
+    td {
+        font-size: 16px !important;
+        text-align: left;
+    }
+
+    th {
+        font-size: 18px !important;
+        text-align: left;
+    }
+    
+    table { 
+        left: -10px;
+    }
+
+    #hamburger_icon {
+        margin-right: 20px;
+    }
+
+    #hamburger_icon2 {
+        margin-right: 20px;
+    }
+
+    #hamburger_menu {
+        margin-right: -120px;
+    }
+
+    #header {
+        width: 130%;
+    }
+}
+
+/*-------------- Form Styling --------------*/
+form {
+    position: relative;
+    float: right;
+    right: 10%;
+    bottom: 420px;
+}
+
+form input {
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+form label {
+    color: black;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    background-color: black;
+    color: white;
+    width: 60px;
+    height: 30px;
+}
+
+button:hover {
+    background-color: gray;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1280px) {
+    form {
+        position: absolute;
+        top: 200px; 
+        right: 2%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    form {
+        right: -2%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    form {
+        display: block;
+        position: relative;
+        top: 10px;
+        float: left;
+    }
+
+    form input {
+        height: 20px;
+    }
+
+    form label {
+        margin-left: 30px;
+    }
+
+    button {
+        position: absolute;
+        top: 210px;
+        margin-bottom: 20px;
+        left: 350px;
+    }
+}
+
+@media only screen and (max-width: 784px) {
+    form {
+        top: 320px;
+        left: -0px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    form {
+        top: 450px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    form {
+        display: block;
+        position: absolute;
+        top: 580px;
+        left: 0px;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    button {
+        left: 300px;
+        top: 210px !important;
+    }
+
+    p a {
+        position: absolute;
+        top: 150px;
+        right: 20px;
+        float: none;
+    }
+}

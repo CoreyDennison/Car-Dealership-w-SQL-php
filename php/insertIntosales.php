@@ -6,15 +6,130 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/selectAll.css">
+        <link rel="stylesheet" type="text/css" href="../css/insertIntosales.css">
+        <link rel="stylesheet" type="text/css" href="../css/box.css">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- ************ JQuery ************ -->
+    <script>
+        $(window).resize(function() {
+            if ($(window).width() > 810) {
+                $("#hamburger_icon").css("display", "none");
+                $("#hamburger_icon2").css("display", "none");
+                $("#hamburger_menu").css("display", "none");
+            }
+
+            else if ($(window).width() < 835) {
+                $("#hamburger_icon").css("display", "block");
+                $("#hamburger_icon2").css("display", "none");
+                $("#hamburger_menu").css("display", "none");
+            }
+        });
+    </script>
+
+    <!-- *********** JavaScript *********** -->
+    <script>
+        function hamburger_menu(){
+            document.getElementById("hamburger_icon").style.display="none";
+            document.getElementById("hamburger_icon2").style.display="block";
+            document.getElementById("hamburger_menu").style.display="block";
+        }
+
+        function hamburger_menu2(){
+            document.getElementById("hamburger_icon").style.display="block";
+            document.getElementById("hamburger_icon2").style.display="none";
+            document.getElementById("hamburger_menu").style.display="none";
+        }
+    </script>
+
     </head>
 
     <body>
 
-    <h2>Add Sale</h2>
+    <div id="header">
+            <a href="../html/index.html"><img src="../images/logo.png" alt="Mac Motors logo" height="60px" width="160px"/></a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#"></a>Employees
+                        <ul>
+                            <li><a href="../php/selectAllemployee.php">View all employees</a></li>
+                            <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
+                            <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+                        </ul>
+                    </li>
+                <ul>
+                    <li><a href="#"></a>Clients
+                        <ul>
+                            <li><a href="../php/selectAllclients.php">View all clients</a></li>
+                            <li><a href="../php/insertIntoclients.php">Add client</a></li>
+                            <li><a href="../php/deletefromclients.php">Remove client</a></li>
+                        </ul>
+                    </li>
+                <ul>
+                    <li><a href="#"></a>Inventory
+                        <ul>
+                            <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
+                            <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
+                            <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+                        </ul>
+                    </li>
+                <ul>
+                    <li><a href="#"></a>Sales
+                        <ul>
+                            <li><a href="../php/selectAllsales.php">View all sales</a></li>
+                            <li><a href="../php/insertIntosales.php">Add sale</a></li>
+                            <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
-    <a href="insertIntoinventory.php"> < Add Inventory</a>
+            <div id="hamburger_icon" onclick="hamburger_menu()">
+                <img src="../images/ham_bars.jpg" width="50px" height="40px">
+            </div>
 
+            <div id="hamburger_icon2" onclick="hamburger_menu2()">
+                <img src="../images/ham_bars2.jpg" width="50px" height="40px">
+            </div>
+
+        </div>
+
+        <div id="hamburger_menu">
+            <h2>Employees</h2>
+            <ul>
+                <li><a href="../php/selectAllemployee.php">View all employees</a></li>
+                <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
+                <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+            </ul>
+
+            <h2>Clients</h2>
+            <ul>
+                <li><a href="../php/selectAllclients.php">View all clients</a></li>
+                <li><a href="../php/insertIntoclients.php">Add client</a></li>
+                <li><a href="../php/deletefromclients.php">Remove client</a></li>
+            </ul>
+
+            <h2>Inventory</h2>
+            <ul>
+                <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
+                <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
+                <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+            </ul>
+
+            <h2>Sales</h2>
+            <ul>
+                <li><a href="../php/selectAllsales.php">View all sales</a></li>
+                <li><a href="../php/insertIntosales.php">Add sale</a></li>
+                <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+            </ul>
+        </div>
+
+        <h3>Add sale</h3>
+        <p class="left"><a href="insertIntoinventory.php"> <---- Add inventory</a></p>
+        
     <?php
 
         $user = 'root';
@@ -39,14 +154,14 @@
 
     <br>
     <form action="insertIntosales.php" method="post" value=""><br>
-        Sale ID: <input type="number" name="sale_id" value=""/><br>
-        Employee ID: <input type="number" name="emp_id" value=""/><br>
-        Client ID: <input type="number" name="client_id" value=""/><br>
-        Transaction Type: <input type="text" name="trans_type" value=""/><br>
-        Registration Number: <input type="text" name="reg" value=""/><br>
-        Time-Of-Sale: <input type="datetime-local" name="tos" value=""/><br>
-        Sale Price: <input type="number" name="price" value=""/><br>
-        <input type="submit" name="submit"/><br>
+        <label>Sale ID: </label><input type="number" name="sale_id" value="" style="width: 30px;"/><br>
+        <label>Employee ID: </label><input type="number" name="emp_id" value="" style="width: 30px;"/><br>
+        <label>Client ID: </label><input type="number" name="client_id" value="" style="width: 30px;"/><br>
+        <label>Transaction Type: </label><input type="text" name="trans_type" value=""/><br>
+        <label>Registration Number: </label><input type="text" name="reg" value=""/><br>
+        <label>Time-Of-Sale: </label><input type="datetime-local" name="tos" value=""/><br>
+        <label>Sale Price: </label><input type="number" name="price" value=""/><br>
+        <button type="submit" name="submit">Submit</button><br>
     </form>
 
 

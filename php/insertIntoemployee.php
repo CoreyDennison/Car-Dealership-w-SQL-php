@@ -6,14 +6,130 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../css/selectAll.css">
-    </head>
+        <link rel="stylesheet" type="text/css" href="../css/insertIntoemployee.css">
+        <link rel="stylesheet" type="text/css" href="../css/box.css">
+        <link rel="stylesheet" type="text/css" href="../css/reset.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- ************ JQuery ************ -->
+    <script>
+        $(window).resize(function() {
+            if ($(window).width() > 810) {
+                $("#hamburger_icon").css("display", "none");
+                $("#hamburger_icon2").css("display", "none");
+                $("#hamburger_menu").css("display", "none");
+            }
+
+            else if ($(window).width() < 835) {
+                $("#hamburger_icon").css("display", "block");
+                $("#hamburger_icon2").css("display", "none");
+                $("#hamburger_menu").css("display", "none");
+            }
+        });
+    </script>
+
+    <!-- *********** JavaScript *********** -->
+    <script>
+        function hamburger_menu(){
+            document.getElementById("hamburger_icon").style.display="none";
+            document.getElementById("hamburger_icon2").style.display="block";
+            document.getElementById("hamburger_menu").style.display="block";
+        }
+
+        function hamburger_menu2(){
+            document.getElementById("hamburger_icon").style.display="block";
+            document.getElementById("hamburger_icon2").style.display="none";
+            document.getElementById("hamburger_menu").style.display="none";
+        }
+    </script>
+
+</head>
 
     <body>
 
-    <h2>Add Employee</h2>
+        <div id="header">
+            <a href="../html/index.html"><img src="../images/logo.png" alt="Mac Motors logo" height="60px" width="160px"/></a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#"></a>Employees
+                        <ul>
+                            <li><a href="../php/selectAllemployee.php">View all employees</a></li>
+                            <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
+                            <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+                        </ul>
+                    </li>
+                <ul>
+                    <li><a href="#"></a>Clients
+                        <ul>
+                            <li><a href="../php/selectAllclients.php">View all clients</a></li>
+                            <li><a href="../php/insertIntoclients.php">Add client</a></li>
+                            <li><a href="../php/deletefromclients.php">Remove client</a></li>
+                        </ul>
+                    </li>
+                <ul>
+                    <li><a href="#"></a>Inventory
+                        <ul>
+                            <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
+                            <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
+                            <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+                        </ul>
+                    </li>
+                <ul>
+                    <li><a href="#"></a>Sales
+                        <ul>
+                            <li><a href="../php/selectAllsales.php">View all sales</a></li>
+                            <li><a href="../php/insertIntosales.php">Add sale</a></li>
+                            <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
 
-    <a href="insertIntoclients.php">Add Client ></a><br>
+            <div id="hamburger_icon" onclick="hamburger_menu()">
+                <img src="../images/ham_bars.jpg" width="50px" height="40px">
+            </div>
+
+            <div id="hamburger_icon2" onclick="hamburger_menu2()">
+                <img src="../images/ham_bars2.jpg" width="50px" height="40px">
+            </div>
+
+        </div>
+
+        <div id="hamburger_menu">
+            <h2>Employees</h2>
+            <ul>
+                <li><a href="../php/selectAllemployee.php">View all employees</a></li>
+                <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
+                <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+            </ul>
+
+            <h2>Clients</h2>
+            <ul>
+                <li><a href="../php/selectAllclients.php">View all clients</a></li>
+                <li><a href="../php/insertIntoclients.php">Add client</a></li>
+                <li><a href="../php/deletefromclients.php">Remove client</a></li>
+            </ul>
+
+            <h2>Inventory</h2>
+            <ul>
+                <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
+                <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
+                <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+            </ul>
+
+            <h2>Sales</h2>
+            <ul>
+                <li><a href="../php/selectAllsales.php">View all sales</a></li>
+                <li><a href="../php/insertIntosales.php">Add sale</a></li>
+                <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+            </ul>
+        </div>
+
+        <h3>Add Employee</h3>
+        <p><a href="insertIntoclients.php">Add client ----></a></p>
+
 
     <?php
 
@@ -39,13 +155,13 @@
 
     <br>
     <form action="insertIntoemployee.php" method="post" value=""><br>
-        Employee ID: <input type="number" name="employee_id" value=""/><br>
-        First Name: <input type="text" name="first_name" value=""/><br>
-        Last Name: <input type="text" name="last_name" value=""/><br>
-        Date Of Birth: <input type="date" name="dob" value=""/><br>
-        Manager ID: <input type="number" name="manager_id" value=""/><br>
-        Salary: <input type="number" name="salary" value=""/><br>
-        <input type="submit" name="submit"/><br>
+        <label>Employee ID: </label><input class="num" type="number" name="employee_id" value="" style="width: 50px;"/><br>
+        <label>First Name: </label><input type="text" name="first_name" value=""/><br>
+        <label>Last Name: </label><input type="text" name="last_name" value=""/><br>
+        <label>Date Of Birth: </label><input type="date" name="dob" value=""/><br>
+        <label>Manager ID: </label><input type="number" name="manager_id" value="" style="width: 50px;"/><br>
+        <label>Salary: </label><input type="number" name="salary" value=""/><br>
+        <button type="submit" name="submit">Submit</button><br>
     </form>
 
 
