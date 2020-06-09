@@ -128,7 +128,7 @@
         </div>
 
         <h3>Add sale</h3>
-        <p class="left"><a href="insertIntoinventory.php"> <---- Add inventory</a></p>
+        <p class="left"><a href="insertIntoinventory.php"><i style="color: red;">&xlarr;</i> Add inventory</a></p>
         
     <?php
 
@@ -185,8 +185,6 @@
             mysqli_query($db, $sql);
             
             $db -> close();
-
-            header('Refresh: 1');
         }
 
         

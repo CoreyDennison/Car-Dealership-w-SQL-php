@@ -35,12 +35,15 @@
             document.getElementById("hamburger_icon").style.display="none";
             document.getElementById("hamburger_icon2").style.display="block";
             document.getElementById("hamburger_menu").style.display="block";
+            document.getElementById("r_arrow").style.display="none";
+
         }
 
         function hamburger_menu2(){
             document.getElementById("hamburger_icon").style.display="block";
             document.getElementById("hamburger_icon2").style.display="none";
             document.getElementById("hamburger_menu").style.display="none";
+            document.getElementById("r_arrow").style.display="block";
         }
     </script>
 
@@ -128,8 +131,8 @@
         </div>
 
         <h3>Add client</h3>
-        <p class="left"><a href="insertIntoemployee.php"> <---- Add employees</a></p>
-        <p class="right"><a href="insertIntoinventory.php">Add inventory ----></a></p>
+        <p class="left"><a href="insertIntoemployee.php"><i style="color: red;">&xlarr;</i> Add employees</a></p>
+        <p class="right" id="r_arrow"><a href="insertIntoinventory.php">Add inventory <i style="color: red; ">&xrarr;</i></a></p>
 
     <?php
 
@@ -183,8 +186,6 @@
             mysqli_query($db, $sql);      
 
             $db -> close();
-
-            header('Refresh: 1');
         }
 
     ?>

@@ -330,10 +330,10 @@ th {
 
 /*-------------- Form Styling --------------*/
 form {
-    position: relative;
+    position: absolute;
     float: right;
     right: 10%;
-    bottom: 420px;
+    bottom: 260px;
 }
 
 form input {
@@ -413,14 +413,14 @@ button:hover {
 @media only screen and (max-width: 580px) {
     form {
         display: block;
-        position: absolute;
-        top: 580px;
-        left: 0px;
+        position: relative;
+        top: 260px;
+        left: -10px;
         margin-bottom: 50px;
     }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
     button {
         left: 300px;
         top: 210px !important;
@@ -431,5 +431,13 @@ button:hover {
         top: 150px;
         right: 20px;
         float: none;
+    }
+
+    #header {
+        width: 550px !important;
+    }
+
+    #hamburger_menu {
+        margin-right: -200px !important;
     }
 }

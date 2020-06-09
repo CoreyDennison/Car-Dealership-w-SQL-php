@@ -315,11 +315,12 @@ th {
     }
 
     #hamburger_menu {
-        margin-right: -120px;
+        margin-right: -150px;
+        z-index: 2;
     }
 
     #header {
-        width: 490px;
+        width: 520px;
     }
 }
 

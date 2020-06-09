@@ -36,12 +36,15 @@
         document.getElementById("hamburger_icon").style.display="none";
         document.getElementById("hamburger_icon2").style.display="block";
         document.getElementById("hamburger_menu").style.display="block";
+        document.getElementById("r_arrow").style.display="none";
+
     }
 
     function hamburger_menu2(){
         document.getElementById("hamburger_icon").style.display="block";
         document.getElementById("hamburger_icon2").style.display="none";
         document.getElementById("hamburger_menu").style.display="none";
+        document.getElementById("r_arrow").style.display="block";
     }
 </script>
 
@@ -129,8 +132,8 @@
         </div>
 
         <h3>Inventory</h3>
-        <p class="left"><a href="selectAllclients.php"> <---- View all clients</a></p>
-        <p class="right"><a href="selectAllsales.php">View all sales ----></a></p>
+        <p class="left"><a href="selectAllclients.php"><i style="color: red;">&xlarr;</i> View all clients</a></p>
+        <p class="right" id="r_arrow"><a href="selectAllsales.php">View all sales <i style="color: red; ">&xrarr;</i></a></p>
 
     <?php
 

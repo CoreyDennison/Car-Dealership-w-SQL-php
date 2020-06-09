@@ -35,12 +35,15 @@
             document.getElementById("hamburger_icon").style.display="none";
             document.getElementById("hamburger_icon2").style.display="block";
             document.getElementById("hamburger_menu").style.display="block";
+            document.getElementById("r_arrow").style.display="none";
+
         }
 
         function hamburger_menu2(){
             document.getElementById("hamburger_icon").style.display="block";
             document.getElementById("hamburger_icon2").style.display="none";
             document.getElementById("hamburger_menu").style.display="none";
+            document.getElementById("r_arrow").style.display="block";
         }
     </script>
 
@@ -128,7 +131,7 @@
         </div>
 
         <h3>Add Employee</h3>
-        <p><a href="insertIntoclients.php">Add client ----></a></p>
+        <p id="r_arrow"><a href="insertIntoclients.php">Add client <i style="color: red; ">&xrarr;</i></a></p>
 
 
     <?php
@@ -183,11 +186,7 @@
             $sql = "INSERT INTO employee (emp_id, fname, lname, dob, mng_id, salary) VALUES($empID, '$firstName', '$lastName', '$dob', $mgrID, $salary);";
             mysqli_query($db, $sql);
             
-            echo "Successfully added employee to 'Employee' table.";
-            
             $db -> close();
-
-            header('Refresh: 1');
         }
 
         

@@ -454,6 +454,10 @@ button:hover {
         width: 600px;
     }
 
+    #hamburger_menu {
+        margin-right: -230px !important;
+    }
+
     .right a {
         margin-right: -180px !important;
     }

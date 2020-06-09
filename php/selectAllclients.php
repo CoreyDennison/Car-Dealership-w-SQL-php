@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="../css/box.css">
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
 
+    <script src="https://kit.fontawesome.com/f2aee70c50.js" crossorigin="anonymous"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -37,12 +38,15 @@
             document.getElementById("hamburger_icon").style.display="none";
             document.getElementById("hamburger_icon2").style.display="block";
             document.getElementById("hamburger_menu").style.display="block";
+            document.getElementById("r_arrow").style.display="none";
+
         }
 
         function hamburger_menu2(){
             document.getElementById("hamburger_icon").style.display="block";
             document.getElementById("hamburger_icon2").style.display="none";
             document.getElementById("hamburger_menu").style.display="none";
+            document.getElementById("r_arrow").style.display="block";
         }
     </script>
 
@@ -130,8 +134,8 @@
         </div>
 
         <h3>Clients</h3>
-        <p class="left"><a href="selectAllemployee.php"> <---- View all employees</a></p>
-        <p class="right"><a href="selectAllinventory.php">View all inventory ----></a></p>
+        <p class="left"><a href="selectAllemployee.php"><i style="color: red;">&xlarr;</i> View all employees</a></p>
+        <p class="right" id="r_arrow"><a href="selectAllinventory.php">View all inventory <i style="color: red; ">&xrarr;</i></a></p>
         
     <?php
 

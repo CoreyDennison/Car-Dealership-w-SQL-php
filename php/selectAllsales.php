@@ -129,7 +129,7 @@
         </div>
 
         <h3>Sales</h3>
-        <p class="left"><a href="selectAllinventory.php"> <---- View all inventory</a></p>
+        <p class="left"><a href="selectAllinventory.php"><i style="color: red;">&xlarr;</i> View all inventory</a></p>
 
     <?php
 
