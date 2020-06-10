@@ -417,8 +417,12 @@ button:hover {
 
 @media only screen and (max-width: 420px) {
     form {
-        top: 180px !important;
+        top: 200px;
         left: 20px;
+    }
+
+    button {
+        left: 380px;
     }
     
     .left a {

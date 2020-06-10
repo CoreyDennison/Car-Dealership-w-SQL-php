@@ -392,7 +392,7 @@ button:hover {
         position: relative;
         top: 10px;
         float: left;
-        z-index: 0;
+        z-index: -1 !important;
     }
 
     form input {
@@ -445,5 +445,12 @@ button:hover {
         top: 350px;
         left: 0px;
 
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    form {
+        top: 300px;
+        left: -10px;
     }
 }
