@@ -154,9 +154,9 @@
 
     <br>
     <form action="insertIntosales.php" method="post" value=""><br>
-        <label>Sale ID: </label><input type="number" name="sale_id" value="" style="width: 30px;"/><br>
-        <label>Employee ID: </label><input type="number" name="emp_id" value="" style="width: 30px;"/><br>
-        <label>Client ID: </label><input type="number" name="client_id" value="" style="width: 30px;"/><br>
+        <label>Sale ID: </label><input type="number" name="sale_id" value="" style="width: 50px;"/><br>
+        <label>Employee ID: </label><input type="number" name="emp_id" value="" style="width: 50px;"/><br>
+        <label>Client ID: </label><input type="number" name="client_id" value="" style="width: 50px;"/><br>
         <label>Transaction Type: </label><input type="text" name="trans_type" value=""/><br>
         <label>Registration Number: </label><input type="text" name="reg" value=""/><br>
         <label>Time-Of-Sale: </label><input type="datetime-local" name="tos" value=""/><br>
@@ -185,6 +185,9 @@
             mysqli_query($db, $sql);
             
             $db -> close();
+
+            //Refreshes current page after 1 second
+            echo "<meta http-equiv='refresh' content='1'>";
         }
 
         

@@ -158,7 +158,7 @@
 
     <br>
     <form action="insertIntoclients.php" method="post" value=""><br>
-        <label>Client ID: </label><input type="number" name="client_id" value="" style="width: 30px;"/><br>
+        <label>Client ID: </label><input type="number" name="client_id" value="" style="width: 50px;"/><br>
         <label>First Name: </label><input type="text" name="first_name" value=""/><br>
         <label>Last Name: </label><input type="text" name="last_name" value=""/><br>
         <label>Phone Number: </label><input type="number" name="phone" value=""/><br>
@@ -186,6 +186,9 @@
             mysqli_query($db, $sql);      
 
             $db -> close();
+
+            //Refreshes current page after 1 second
+            echo "<meta http-equiv='refresh' content='1'>";
         }
 
     ?>

@@ -48,7 +48,7 @@
         }
 
         function showAlert() {
-            confirm("Are you sure you want to delete this employee from the table?");
+            confirm("Are you sure you want to delete this client from the table?");
         }
     </script>
 
@@ -183,6 +183,9 @@
             mysqli_query($db, $sql);      
 
             $db -> close();
+            
+            //Refreshes current page after 1 second
+            echo "<meta http-equiv='refresh' content='1'>";
         }
 
     ?>

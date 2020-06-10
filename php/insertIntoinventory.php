@@ -159,7 +159,7 @@
 
 <br>
     <form action="insertIntoinventory.php" method="post"><br>
-        <label>Inventory ID: </label><input type="number" name="inv_id" value="" style="width: 30px;"/><br>
+        <label>Inventory ID: </label><input type="number" name="inv_id" value="" style="width: 50px;"/><br>
         <label>Manufacturer: </label><input type="text" name="manu" value=""/><br>
         <label>Model: </label><input type="text" name="model" value=""/><br>
         <label>Registration Number: </label><input type="text" name="reg" value=""/><br>
@@ -191,6 +191,9 @@
             mysqli_query($db, $sql);  
 
             $db -> close();
+
+            //Refreshes current page after 1 second
+            echo "<meta http-equiv='refresh' content='1'>";
         }
 
     ?>

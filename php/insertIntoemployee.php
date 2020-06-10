@@ -187,6 +187,9 @@
             mysqli_query($db, $sql);
             
             $db -> close();
+
+            //Refreshes current page after 1 second
+            echo "<meta http-equiv='refresh' content='1'>";
         }
 
         

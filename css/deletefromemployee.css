@@ -54,8 +54,9 @@
     display: none;
     position: absolute;
     top: 0px;
+    left: -10px;
     width: 190px;
-    padding-top: 100px;
+    padding-top: 80px;
     background-color: black;
     z-index: -1;
 }
@@ -330,10 +331,10 @@ th {
 
 /*-------------- Form Styling --------------*/
 form {
-    position: relative;
+    position: absolute;
     float: right;
     right: 10%;
-    bottom: 280px;
+    top: 180px;
 }
 
 form input {
@@ -359,7 +360,7 @@ button:hover {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1075px) {
     form {
         right: -2%;
     }

@@ -4,9 +4,13 @@
     height: 90px;
 }
 
-#header img {
+#header a img {
     margin-top: 15px;
     margin-left: 100px;
+}
+
+#header a img:hover {
+    cursor: pointer;
 }
 
 #header nav {
@@ -50,8 +54,9 @@
     display: none;
     position: absolute;
     top: 0px;
+    left: -10px;
     width: 190px;
-    padding-top: 100px;
+    padding-top: 80px;
     background-color: black;
     z-index: -1;
 }
