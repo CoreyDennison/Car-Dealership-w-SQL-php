@@ -112,9 +112,10 @@
     display: none;
     background-color: black;
     width: 250px;
-    float: right;
+    position: absolute;
+    right: 0px;
     padding: 20px 10px 20px 20px;
-    z-index: 2;
+    z-index: 1 !important;
 }
 
 #hamburger_menu h2 {
@@ -283,13 +284,6 @@ th {
         font-size: 20px !important;
         padding: 10px !important;
     }
-    
-    table { 
-        position: absolute;
-        top: 130px;
-        left: 0px;
-        z-index: -1;
-    }
 
     #hamburger_icon {
         margin-right: 80px;
@@ -413,24 +407,11 @@ button:hover {
 
 @media only screen and (max-width: 784px) {
     form {
-        top: 250px;
-        left: -190px;
-    }
-}
-
-@media only screen and (max-width: 720px) {
-    form {
-        top: 220px;
+        left: 0px;
     }
 }
 
 @media only screen and (max-width: 700px) {
-    form {
-        top: 280px;
-        left: -160px;
-        z-index: -1;
-    }
-
     .left a {
         margin-left: 10px !important;
     }
@@ -439,18 +420,3 @@ button:hover {
         margin-right: -50px !important;
     }
 }   
-
-@media only screen and (max-width: 588px) {
-    form {
-        top: 350px;
-        left: 0px;
-
-    }
-}
-
-@media only screen and (max-width: 420px) {
-    form {
-        top: 300px;
-        left: -10px;
-    }
-}

@@ -112,8 +112,10 @@
     display: none;
     background-color: black;
     width: 250px;
-    float: right;
+    position: absolute;
+    right: 0px;
     padding: 20px 10px 20px 20px;
+    z-index: 1 !important;
 }
 
 #hamburger_menu h2 {

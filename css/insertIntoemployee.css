@@ -112,8 +112,10 @@
     display: none;
     background-color: black;
     width: 250px;
-    float: right;
+    position: absolute;
+    right: 0px;
     padding: 20px 10px 20px 20px;
+    z-index: 1 !important;
 }
 
 #hamburger_menu h2 {
@@ -272,13 +274,6 @@ th {
         font-size: 20px !important;
         padding: 10px !important;
     }
-    
-    table { 
-        position: absolute;
-        top: 130px;
-        left: 0px;
-        z-index: -1;
-    }
 
     #hamburger_icon {
         margin-right: 80px;
@@ -423,7 +418,7 @@ button:hover {
 
 @media only screen and (max-width: 420px) {
     form {
-        top: 360px;
+        top: 0px;
     }
 
     button {

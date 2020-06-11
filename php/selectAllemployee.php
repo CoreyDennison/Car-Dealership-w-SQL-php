@@ -50,8 +50,8 @@
 
     <body>
 
-        <div id="header">
-            <a href="../html/index.html"><img src="../images/logo.png" alt="Mac Motors logo" height="60px" width="160px"/></a>
+    <div id="header">
+    <a href="../html/index.html"><img src="../images/logo.png" alt="Mac Motors logo" height="60px" width="160px"/></a>
             
             <nav>
                 <ul>
@@ -60,6 +60,7 @@
                             <li><a href="../php/selectAllemployee.php">View all employees</a></li>
                             <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
                             <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+                            <li><a href="../php/updateEmployee.php">Edit employee</a></li>
                         </ul>
                     </li>
                 <ul>
@@ -68,6 +69,7 @@
                             <li><a href="../php/selectAllclients.php">View all clients</a></li>
                             <li><a href="../php/insertIntoclients.php">Add client</a></li>
                             <li><a href="../php/deletefromclients.php">Remove client</a></li>
+                            <li><a href="../php/updateClient.php">Edit client</a></li>
                         </ul>
                     </li>
                 <ul>
@@ -76,6 +78,7 @@
                             <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
                             <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
                             <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+                            <li><a href="../php/updateInventory.php">Edit inventory</a></li>
                         </ul>
                     </li>
                 <ul>
@@ -84,6 +87,7 @@
                             <li><a href="../php/selectAllsales.php">View all sales</a></li>
                             <li><a href="../php/insertIntosales.php">Add sale</a></li>
                             <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+                            <li><a href="../php/updateSale.php">Edit Sale</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -105,6 +109,7 @@
                 <li><a href="../php/selectAllemployee.php">View all employees</a></li>
                 <li><a href="../php/insertIntoemployee.php">Add employee</a></li>
                 <li><a href="../php/deletefromemployee.php">Remove employee</a></li>
+                <li><a href="../php/updateEmployee.php">Edit employee</a></li>
             </ul>
 
             <h2>Clients</h2>
@@ -112,6 +117,7 @@
                 <li><a href="../php/selectAllclients.php">View all clients</a></li>
                 <li><a href="../php/insertIntoclients.php">Add client</a></li>
                 <li><a href="../php/deletefromclients.php">Remove client</a></li>
+                <li><a href="../php/updateClient.php">Edit client</a></li>
             </ul>
 
             <h2>Inventory</h2>
@@ -119,6 +125,7 @@
                 <li><a href="../php/selectAllinventory.php">View all inventory</a></li>
                 <li><a href="../php/insertIntoinventory.php">Add inventory</a></li>
                 <li><a href="../php/deletefrominventory.php">Remove inventory</a></li>
+                <li><a href="../php/updateInventory.php">Edit inventory</a></li>
             </ul>
 
             <h2>Sales</h2>
@@ -126,9 +133,9 @@
                 <li><a href="../php/selectAllsales.php">View all sales</a></li>
                 <li><a href="../php/insertIntosales.php">Add sale</a></li>
                 <li><a href="../php/deletefromsales.php">Remove sale</a></li>
+                <li><a href="../php/updateSale.php">Edit Sale</a></li>
             </ul>
         </div>
-
         <h3>Employees</h3>
         <p><a href="selectAllclients.php" id="r_arrow">View all clients <i style="color: red;">&xrarr;</i></a></p>
 

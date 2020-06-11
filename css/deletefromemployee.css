@@ -112,8 +112,10 @@
     display: none;
     background-color: black;
     width: 250px;
-    float: right;
+    position: absolute;
+    right: 0px;
     padding: 20px 10px 20px 20px;
+    z-index: 1 !important;
 }
 
 #hamburger_menu h2 {
@@ -306,11 +308,6 @@ th {
         font-size: 18px !important;
         text-align: left;
     }
-    
-    table {
-        position: absolute;
-        left: -10px;
-    }
 
     #hamburger_icon {
         margin-right: 20px;
@@ -407,23 +404,16 @@ button:hover {
     }
 }
 
-@media only screen and (max-width: 580px) {
-    form {
-        display: block;
-        position: relative;
-        top: 260px;
-        left: -20px;
-        margin-bottom: 50px;
-        z-index: -1 !important;
-    }
-}
-
 @media only screen and (max-width: 430px) {
     #header {
         width: 560px;
     }
 
     #hamburger_icon {
+        margin-right: 30px !important;
+    }
+
+    #hamburger_icon2 {
         margin-right: 30px !important;
     }
 }
@@ -438,6 +428,6 @@ button:hover {
     }
 
     #hamburger_menu {
-        margin-right: -200px !important;
+        margin-right: -185px !important;
     }
 }
