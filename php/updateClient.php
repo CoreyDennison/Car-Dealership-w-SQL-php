@@ -140,43 +140,44 @@
         </div>
 
 
-        <h3>Edit Employee</h3>
-        <p class="right" id="r_arrow"><a href="updateClient.php">Edit client <i style="color: red; ">&xrarr;</i></a></p>
-<?php
+        <h3>Edit Clients</h3>
+        <p class="left"><a href="updateEmployee.php"><i style="color: red;">&xlarr;</i> Edit employees</a></p>
+        <p class="right" id="r_arrow"><a href="updateInventory.php">Edit inventory <i style="color: red; ">&xrarr;</i></a></p>
+    <?php
 
-$user = 'root';
-$pass = '';
-$db = 'car_dealership';
+        $user = 'root';
+        $pass = '';
+        $db = 'car_dealership';
 
-$db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
+        $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-$sql = "SELECT * FROM employee";
+        $sql = "SELECT * FROM clients";
 
-$result = mysqli_query($db, $sql) or die("Unable to gather info.");
+        $result = mysqli_query($db, $sql) or die("Unable to gather info.");
 
-echo "<table>";
-echo "<tr><th>emp_id</th><th>fname</th><th>lname</th><th>DOB</th><th>mgr_id</th><th>salary</th></tr>";
-while($row = mysqli_fetch_assoc($result)){
-    echo "<tr><td>{$row['emp_id']}</td><td>{$row['fname']}</td><td>{$row['lname']}</td><td>{$row['dob']}</td><td>{$row['mng_id']}</td><td>{$row['salary']}</td></tr>";
-}
-echo "</table>";
+        echo "<table>";
+        echo "<tr><th>client_id</th><th>fname</th><th>lname</th><th>phone</th><th>address</th></tr>";
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<tr><td>{$row['client_id']}</td><td>{$row['fname']}</td><td>{$row['lname']}</td><td>{$row['phone']}</td><td>{$row['address']}</td></tr>";
+        }
+        echo "</table>";
 
-$db -> close();
-?>
+        $db -> close();
+    ?>
 
-<form action="updateEmployee.php" method="post" value=""><br>
-        <p>Enter ID of employees whose data you wish to edit: </p><input class="num" type="number" name="employee_id" value="" style="width: 50px;"/><br>
-        <p>Enter new data (If value is unchanged, please leave as current value (e.g if Manager ID is listed as 1, enter Manager ID as 1 below)):</p><br>
-        <label>Manager ID: </label><input type="number" name="manager_id" value="" style="width: 50px;"/><br>
-        <label>Salary: </label><input type="number" name="salary" value=""/><br>
+<form action="updateClient.php" method="post" value=""><br>
+        <p>Enter ID of the client whose data you wish to edit: </p><input type="number" name="client_id" style="width: 50px;"/><br>
+        <p>Enter new data (If value is unchanged, please leave as current value (e.g if phone number is already listed, enter same value below)):</p><br>
+        <label>Phone Number: </label><input type="number" name="phone" value=""/><br>
+        <label>Address: </label><input type="text" name="address" value=""/><br>
         <button type="submit" name="submit">Submit</button><br>
     </form>
 
     <?php
         if(isset($_POST['submit'])){
-            $empID = $_POST["employee_id"];
-            $mgrID = $_POST["manager_id"];
-            $salary = $_POST["salary"];
+            $clientID = $_POST["client_id"];
+            $phone = $_POST["phone"];
+            $address = $_POST["address"];
 
             $user = 'root';
             $pass = '';
@@ -184,7 +185,7 @@ $db -> close();
 
             $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-            $sql = "UPDATE `employee` SET `mng_id`= $mgrID,`salary`= $salary WHERE `emp_id` = $empID ";
+            $sql = "UPDATE `clients` SET `phone`= $phone,`address`= '$address' WHERE `client_id` = $clientID";
             mysqli_query($db, $sql);
             
             $db -> close();

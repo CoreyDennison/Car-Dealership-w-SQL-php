@@ -140,9 +140,10 @@
         </div>
 
 
-        <h3>Edit Employee</h3>
-        <p class="right" id="r_arrow"><a href="updateClient.php">Edit client <i style="color: red; ">&xrarr;</i></a></p>
-<?php
+        <h3>Edit Inventory</h3>
+        <p class="left"><a href="updateClients.php"><i style="color: red;">&xlarr;</i> Edit clients</a></p>
+        <p class="right"><a href="updateSales.php">Edit Sales <i style="color: red;">&xrarr;</i></a></p>
+        <?php
 
 $user = 'root';
 $pass = '';
@@ -150,33 +151,37 @@ $db = 'car_dealership';
 
 $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-$sql = "SELECT * FROM employee";
+$sql = "SELECT * FROM inventory";
 
 $result = mysqli_query($db, $sql) or die("Unable to gather info.");
 
 echo "<table>";
-echo "<tr><th>emp_id</th><th>fname</th><th>lname</th><th>DOB</th><th>mgr_id</th><th>salary</th></tr>";
+echo "<tr><th>inv_id</th><th>manu</th><th>model</th><th>reg</th><th>colour</th><th>price</th><th>status</th></tr>";
 while($row = mysqli_fetch_assoc($result)){
-    echo "<tr><td>{$row['emp_id']}</td><td>{$row['fname']}</td><td>{$row['lname']}</td><td>{$row['dob']}</td><td>{$row['mng_id']}</td><td>{$row['salary']}</td></tr>";
+    echo "<tr><td>{$row['inv_id']}</td><td>{$row['manu']}</td><td>{$row['model']}</td><td>{$row['reg']}</td><td>{$row['colour']}</td><td>{$row['price']}</td><td>{$row['status']}</td></tr>";
 }
 echo "</table>";
 
 $db -> close();
 ?>
 
-<form action="updateEmployee.php" method="post" value=""><br>
-        <p>Enter ID of employees whose data you wish to edit: </p><input class="num" type="number" name="employee_id" value="" style="width: 50px;"/><br>
-        <p>Enter new data (If value is unchanged, please leave as current value (e.g if Manager ID is listed as 1, enter Manager ID as 1 below)):</p><br>
-        <label>Manager ID: </label><input type="number" name="manager_id" value="" style="width: 50px;"/><br>
-        <label>Salary: </label><input type="number" name="salary" value=""/><br>
+<form action="updateInventory.php" method="post" value=""><br>
+        <p>Enter ID of the vehicle whose data you wish to edit: </p><input type="number" name="inv_id" value="" style="width: 50px;"/><br>
+        <p>Enter new data (If value is unchanged, please leave as current value (e.g if model is already listed, enter same value below)):</p><br>
+        <label>Model: </label><input type="text" name="model" value=""/><br>
+        <label>Registration Number: </label><input type="text" name="reg" value=""/><br>
+        <label>Price: </label><input type="number" name="price" value=""/><br>
+        <label>Status: </label><input type="text" name="status" value=""/><br>
         <button type="submit" name="submit">Submit</button><br>
     </form>
 
     <?php
         if(isset($_POST['submit'])){
-            $empID = $_POST["employee_id"];
-            $mgrID = $_POST["manager_id"];
-            $salary = $_POST["salary"];
+            $invID = $_POST["inv_id"];
+            $model = $_POST["model"];
+            $reg = $_POST["reg"];
+            $price = $_POST["price"];
+            $status = $_POST["status"];
 
             $user = 'root';
             $pass = '';
@@ -184,7 +189,7 @@ $db -> close();
 
             $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-            $sql = "UPDATE `employee` SET `mng_id`= $mgrID,`salary`= $salary WHERE `emp_id` = $empID ";
+            $sql = "UPDATE `inventory` SET `model`= '$model', `reg` = '$reg', `price` = $price, `status` = '$status'  WHERE `inv_id` = $invID";
             mysqli_query($db, $sql);
             
             $db -> close();

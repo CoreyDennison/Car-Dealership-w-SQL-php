@@ -140,43 +140,52 @@
         </div>
 
 
-        <h3>Edit Employee</h3>
-        <p class="right" id="r_arrow"><a href="updateClient.php">Edit client <i style="color: red; ">&xrarr;</i></a></p>
-<?php
+        <h3>Edit Sale</h3>
+        <p class="left"><a href="updateInventory.php"><i style="color: red;">&xlarr;</i> Edit inventory</a></p>
+    
+    <?php
 
-$user = 'root';
-$pass = '';
-$db = 'car_dealership';
+        $user = 'root';
+        $pass = '';
+        $db = 'car_dealership';
 
-$db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
+        $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-$sql = "SELECT * FROM employee";
+        $sql = "SELECT * FROM sales";
 
-$result = mysqli_query($db, $sql) or die("Unable to gather info.");
+        $result = mysqli_query($db, $sql) or die("Unable to gather info.");
 
-echo "<table>";
-echo "<tr><th>emp_id</th><th>fname</th><th>lname</th><th>DOB</th><th>mgr_id</th><th>salary</th></tr>";
-while($row = mysqli_fetch_assoc($result)){
-    echo "<tr><td>{$row['emp_id']}</td><td>{$row['fname']}</td><td>{$row['lname']}</td><td>{$row['dob']}</td><td>{$row['mng_id']}</td><td>{$row['salary']}</td></tr>";
-}
-echo "</table>";
+        echo "<table>";
+        echo "<tr><th>sale_id</th><th>emp_id</th><th>client_id</th><th>trans_type</th><th>reg</th><th>time_of_sale</th><th>price</th></tr>";
+        while($row = mysqli_fetch_assoc($result)){
+            echo "<tr><td>{$row['sale_id']}</td><td>{$row['emp_id']}</td><td>{$row['client_id']}</td><td>{$row['trans_type']}</td><td>{$row['reg']}</td><td>{$row['time_of_sale']}</td><td>{$row['price']}</td></tr>";
+        }
+        echo "</table>";
 
-$db -> close();
-?>
+        $db -> close();
+    ?>
 
-<form action="updateEmployee.php" method="post" value=""><br>
-        <p>Enter ID of employees whose data you wish to edit: </p><input class="num" type="number" name="employee_id" value="" style="width: 50px;"/><br>
-        <p>Enter new data (If value is unchanged, please leave as current value (e.g if Manager ID is listed as 1, enter Manager ID as 1 below)):</p><br>
-        <label>Manager ID: </label><input type="number" name="manager_id" value="" style="width: 50px;"/><br>
-        <label>Salary: </label><input type="number" name="salary" value=""/><br>
+<form action="updateSale.php" method="post" value=""><br>
+        <p>Enter ID of the client whose data you wish to edit: </p><input type="number" name="sale_id" value="" style="width: 50px;"/><br>
+        <p>Enter new data (If value is unchanged, please leave as current value (e.g if trans_type is listed as "Sold", enter same value below)):</p><br>
+        <label>Employee ID: </label><input type="number" name="emp_id" value="" style="width: 50px;"/><br>
+        <label>Client ID: </label><input type="number" name="client_id" value="" style="width: 50px;"/><br>
+        <label>Transaction Type: </label><input type="text" name="trans_type" value=""/><br>
+        <label>Registration Number: </label><input type="text" name="reg" value=""/><br>
+        <label>Time-Of-Sale: </label><input type="datetime-local" name="tos" value=""/><br>
+        <label>Sale Price: </label><input type="number" name="price" value=""/><br>
         <button type="submit" name="submit">Submit</button><br>
     </form>
 
     <?php
         if(isset($_POST['submit'])){
-            $empID = $_POST["employee_id"];
-            $mgrID = $_POST["manager_id"];
-            $salary = $_POST["salary"];
+            $saleID = $_POST["sale_id"];
+            $empID = $_POST["emp_id"];
+            $clientID = $_POST["client_id"];
+            $transType = $_POST["trans_type"];
+            $reg = $_POST["reg"];
+            $timeOfSale = $_POST["tos"];
+            $price = $_POST["price"];
 
             $user = 'root';
             $pass = '';
@@ -184,7 +193,7 @@ $db -> close();
 
             $db = new mysqli('localhost', $user, $pass, $db) or die("Unable to connect!");
 
-            $sql = "UPDATE `employee` SET `mng_id`= $mgrID,`salary`= $salary WHERE `emp_id` = $empID ";
+            $sql = "UPDATE `sales` SET `emp_id`= $empID,`client_id`= $clientID,`trans_type`= '$transType',`reg`= '$reg',`time_of_sale`= '$timeOfSale',`price`= $price WHERE sale_id = $saleID ";
             mysqli_query($db, $sql);
             
             $db -> close();
