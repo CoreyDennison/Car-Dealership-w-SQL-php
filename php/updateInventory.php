@@ -142,7 +142,7 @@
 
         <h3>Edit Inventory</h3>
         <p class="left"><a href="updateClients.php"><i style="color: red;">&xlarr;</i> Edit clients</a></p>
-        <p class="right"><a href="updateSales.php">Edit Sales <i style="color: red;">&xrarr;</i></a></p>
+        <p class="right"><a href="updateSale.php">Edit Sales <i style="color: red;">&xrarr;</i></a></p>
         <?php
 
 $user = 'root';
